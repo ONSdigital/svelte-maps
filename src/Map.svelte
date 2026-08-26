@@ -33,6 +33,7 @@
   export let maxzoom = 14;
   export let controls = false;
   export let tabbable = false;
+  export let scrollZoomGuard = null;
 
   export let zoom = null;
   export let center = null;
@@ -97,6 +98,9 @@
   }
 
   _options = { ..._options, ...options }; // Combine core options + custom user options
+  if (typeof scrollZoomGuard === "boolean") {
+    _options.cooperativeGestures = scrollZoomGuard;
+  }
 
   onMount(() => {
     const newmap = new maplibre.Map({

@@ -123,9 +123,9 @@
 	<div class="grid">
 		<div>
 			<div class="map">
-				<Map id="map1" style={baseMap.path} bind:map={map1} bind:zoom={zoom} bind:center={center}/>
+				<Map id="map1" style={baseMap.path} bind:map={map1} bind:zoom={zoom} bind:center={center} scrollZoomGuard={true}/>
 			</div>
-			Plain OSM base map with location bindings<br/>
+			Plain OSM base map with location bindings and guarded scroll zoom (cmd/ctrl + scroll)<br/>
 			(zoom: {zoom ? zoom.toFixed(1) : ''},
 			lon: {center.lng ? center.lng.toFixed(1) : ''},
 			lat: {center.lat ? center.lat.toFixed(1) : ''})
